@@ -1,3 +1,3 @@
-var dbhost = "";
+var dbhost = "http://00848e7e.ngrok.io";
 
-module.exports = dbhost;
+module.exports.host = dbhost;

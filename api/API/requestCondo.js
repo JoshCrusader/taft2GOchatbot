@@ -1,3 +1,4 @@
+var host = require('../config');
 function returnJsonObject(){
     var responseObj = {'fulfillmentMessages': [
             {
@@ -30,7 +31,7 @@ function returnJsonObject(){
                             "text": "taft2GO offers various services for you to get to the place you want to stay in! :) How do you want to get started? ;)",
                             "buttons": [{
                                 "type": "web_url",
-                                "url": "localhost/taft2GO/index.php",
+                                "url": host+"/taft2GO/index.php",
                                 "title": "Visit Taft2GO"
                             }]
                         }

@@ -1,5 +1,6 @@
 //calling json api from node https://stackoverflow.com/questions/11826384/calling-a-json-api-with-node-js
 var request = require('request-promise');
+var host = require('../config');
 
 function returnJsonObject(){
     //Some magic i will probably forget in the future
@@ -61,7 +62,7 @@ function returnJsonObject(){
         },
     ]
     };
-    var url = 'http://localhost:8080/taft2GO/listing';
+    var url = host+'/taft2GO/listing';
     var options = {
         method: 'GET',
         uri: url,
@@ -90,17 +91,17 @@ function returnJsonObject(){
                 carousel_obj.subtitle = "💸Rate: P"+listings[i].monthlyRate+" \n 👨‍👩‍👧‍👦Capacity: "+listings[i].capacity;
                 carousel_obj.default_action = {};
                 carousel_obj.default_action.type = "web_url";
-                carousel_obj.default_action.url = "http://localhost/taft2GO/room-page.php?listingID="+listings[i]._id.$oid;
+                carousel_obj.default_action.url = host+"taft2GO/room-page.php?listingID="+listings[i]._id.$oid;
                 carousel_obj.default_action.webview_height_ratio = "COMPACT";
                 carousel_obj.buttons = [];
                 carousel_but_1 = {
                     'type': 'web_url',
-                    'url': "http://localhost/taft2GO/room-page.php?listingID="+listings[i]._id.$oid,
+                    'url': host+"taft2GO/room-page.php?listingID="+listings[i]._id.$oid,
                     'title': 'Visit Site🏤'
                 }
                 carousel_but_2 = {
                     'type': 'web_url',
-                    'url': "http://localhost/taft2GO/Stays",
+                    'url': host+"/taft2GO/Stays",
                     'title': 'My profile'
                 }
                 carousel_obj.buttons.push(carousel_but_1,carousel_but_2);
