@@ -2,10 +2,11 @@ const express = require('express'); //needed to instantiate express functions
 const bodyParser = require('body-parser');
 const app = express(); //instantiate the express/response handling function
 const request = require('request');
-const host = require('./api/config');
+const {host} = require('./api/config');
 const requestCondoObj = require('./api/API/requestCondo');
 const viewGalleryObj = require('./api/API/viewGalley');
 const productRoutes = require('./api/routes/products'); //get route handlng for a specific route with the products.js file
+
 /*
 [FUNC]
     this returns a json object at any route it goes to
